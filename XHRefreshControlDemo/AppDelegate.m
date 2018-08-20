@@ -21,15 +21,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
     UITabBarController *tabBarC = [[UITabBarController alloc] init];
-    tabBarC.delegate = self;
+    
     FirstViewController *firstVC = [[FirstViewController alloc] init];
     UINavigationController *navFirst = [[UINavigationController alloc] initWithRootViewController:firstVC];
     navFirst.tabBarItem.title = @"first";
+    
     SecondViewController *secondVC = [[SecondViewController alloc] init];
     UINavigationController *navSecond = [[UINavigationController alloc] initWithRootViewController:secondVC];
     navSecond.tabBarItem.title = @"second";
+    
     tabBarC.viewControllers = @[navFirst,navSecond];
+    tabBarC.delegate = self;
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = tabBarC;
     [self.window makeKeyAndVisible];

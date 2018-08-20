@@ -19,7 +19,7 @@
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationItem.title = @"second";
+    self.navigationItem.title = @"第二页";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData:) name:@"RefreshData" object:nil];
 }
 
